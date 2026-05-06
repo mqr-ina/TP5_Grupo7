@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -26,5 +27,9 @@ namespace TP5_Grupo7_PIII
             ddlProvincias.DataBind();
         }
 
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
+         
+        }
     }
 }
