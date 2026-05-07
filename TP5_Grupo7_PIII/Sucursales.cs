@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 
@@ -23,5 +24,14 @@ namespace TP5_Grupo7_PIII
             string nombreTabla = "Sucursales";
             return acceso.obtenerTablas(consultaSQL, nombreTabla);
         }
+
+        public DataTable filtrarSucursal(string idSucursal)
+        {
+            //filtramos por idSucursal como se pide en el enunciado
+            string consultaSQL = "SELECT * FROM Sucursal WHERE Id_Sucursal = " + idSucursal;
+            string nombreTabla = "Sucursal";
+            return acceso.obtenerTablas(consultaSQL, nombreTabla);
+        }
+
     }
 }

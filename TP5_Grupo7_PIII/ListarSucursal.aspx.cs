@@ -29,7 +29,15 @@ namespace TP5_Grupo7_PIII
 
         protected void butMostrarT_Click(object sender, EventArgs e)
         {
+                        tbIdSuc.Text = "";
+                        CargarSucursales();
+        }
 
+        protected void butFiltrar_Click(object sender, EventArgs e)
+        {
+                       int idSucursal = Convert.ToInt32(tbIdSuc.Text);
+                       gvListar.DataSource = sucursales.filtrarSucursal(idSucursal.ToString());
+                       gvListar.DataBind();
         }
     }
 }

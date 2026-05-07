@@ -99,7 +99,7 @@
                     </td>
                     <td class="auto-style14"></td>
                     <td class="auto-style16">
-                        <asp:Button ID="butFiltrar" runat="server" Text="Filtrar" Width="81px" />
+                        <asp:Button ID="butFiltrar" runat="server" Text="Filtrar" Width="81px" OnClick="butFiltrar_Click" />
                     </td>
                     <td class="auto-style8">
                         <asp:Button ID="butMostrarT" runat="server" OnClick="butMostrarT_Click" Text="Mostrar Todos" />

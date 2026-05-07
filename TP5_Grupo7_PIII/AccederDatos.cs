@@ -22,7 +22,7 @@ namespace TP5_Grupo7_PIII
             return ds.Tables["nombretabla"]; // devolvemos la tabla del dataset que contiene los datos obtenidos de la consulta SQL
         }
 
-
+        
     }
 
 }
