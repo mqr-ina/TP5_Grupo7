@@ -17,6 +17,7 @@ namespace TP5_Grupo7_PIII
             if (!IsPostBack)
             {
                 CargarSucursales();
+                lblMensaje.Visible = false;
             }
         }
         private void CargarSucursales()
@@ -35,9 +36,16 @@ namespace TP5_Grupo7_PIII
 
         protected void butFiltrar_Click(object sender, EventArgs e)
         {
-                       int idSucursal = Convert.ToInt32(tbIdSuc.Text);
-                       gvListar.DataSource = sucursales.filtrarSucursal(idSucursal.ToString());
-                       gvListar.DataBind();
+            string idSucursal = tbIdSuc.Text;
+            if(tbIdSuc.Text.Trim() == "")
+            {
+                lblMensaje.Text = "Ingrese un ID de sucursal";
+                lblMensaje.Visible = true;
+                return;
+            }
+            gvListar.DataSource = sucursales.filtrarSucursal(idSucursal);
+            gvListar.DataBind();
+
         }
     }
 }
