@@ -89,10 +89,10 @@
                         <asp:Label ID="lbIngreSuc" runat="server" Text="Ingresar ID Sucursal"></asp:Label>
                     </td>
                     <td class="auto-style12">
-                        <asp:TextBox ID="tbEliminarId" runat="server" Width="271px"></asp:TextBox>
+                        <asp:TextBox ID="tbEliminarSucursal" runat="server" Width="271px"></asp:TextBox>
                     </td>
                     <td class="auto-style13">
-                        <asp:Button ID="butEliminar" runat="server" Text="Eliminar" ValidationGroup="VEliminar" />
+                        <asp:Button ID="butEliminar" runat="server" Text="Eliminar" ValidationGroup="VEliminar" OnClick="butEliminar_Click" />
                     </td>
                     <td>
                         <asp:RegularExpressionValidator ID="revNumeros" runat="server" ControlToValidate="tbEliminarId" ErrorMessage="La ID no puede contener letras ni espacios" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="VEliminar"></asp:RegularExpressionValidator>

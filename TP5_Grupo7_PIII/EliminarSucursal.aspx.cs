@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,9 +10,17 @@ namespace TP5_Grupo7_PIII
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
+        AccederDatos conexion = new AccederDatos();
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void butEliminar_Click(object sender, EventArgs e)
+        {
+            string sucursalAEliminar = tbEliminarSucursal.Text;
+            Sucursales sucursales = new Sucursales();
+            sucursales.eliminarSucursal(sucursalAEliminar);
         }
     }
 }
