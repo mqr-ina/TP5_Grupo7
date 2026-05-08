@@ -23,15 +23,16 @@ namespace TP5_Grupo7_PIII
             return ds.Tables[nombretabla]; // devolvemos la tabla del dataset que contiene los datos obtenidos de la consulta SQL
         }
 
-        public void ejecutarConsulta(string consultaSql)
+        public int ejecutarConsulta(string consultaSql)
         {
             SqlConnection conexion = new SqlConnection(rutaConexion);
             conexion.Open();
 
             SqlCommand sqlcommand = new SqlCommand(consultaSql, conexion);
 
-            sqlcommand.ExecuteNonQuery();
+            int filasAfectadas = (int)sqlcommand.ExecuteNonQuery();
             conexion.Close();
+            return filasAfectadas;
         }
         
     }
