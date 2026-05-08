@@ -18,9 +18,7 @@ namespace TP5_Grupo7_PIII
 
         protected void butEliminar_Click(object sender, EventArgs e)
         {
-            string sucursalAEliminar = tbEliminarSucursal.Text;
-            Sucursales sucursales = new Sucursales();
-            sucursales.eliminarSucursal(sucursalAEliminar);
+            
         }
     }
 }

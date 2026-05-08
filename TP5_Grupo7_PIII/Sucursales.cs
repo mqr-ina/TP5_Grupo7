@@ -32,10 +32,6 @@ namespace TP5_Grupo7_PIII
             string nombreTabla = "Sucursal";
             return acceso.obtenerTablas(consultaSQL, nombreTabla);
         }
-        public void eliminarSucursal(string idSucursal)
-        {
-            string consultaSql = "DELETE FROM Sucursal WHERE Id_Sucursal = " + idSucursal;
-            acceso.ejecutarConsulta(consultaSql);
-        }
+        
     }
 }
