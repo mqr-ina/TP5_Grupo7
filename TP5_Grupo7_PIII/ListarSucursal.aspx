@@ -173,6 +173,24 @@
                 </tr>
                 <tr>
                     <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style9">
+                        <asp:Label ID="lblProvincia" runat="server" Text="Búsqueda seleccione una Provincia: "></asp:Label>
+                    </td>
+                    <td class="auto-style12">
+                        <asp:DropDownList ID="ddlProvincias" runat="server">
+                        </asp:DropDownList>
+                    </td>
+                    <td class="auto-style13">&nbsp;</td>
+                    <td class="auto-style17">
+                        &nbsp;</td>
+                    <td class="auto-style19">&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style9">&nbsp;</td>
                     <td class="auto-style12">
                         <asp:ValidationSummary ID="vsErrores" runat="server" ForeColor="#CC3300" Width="268px" />

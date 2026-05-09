@@ -17,8 +17,18 @@ namespace TP5_Grupo7_PIII
             if (!IsPostBack)
             {
                 CargarSucursales();
+                cargarProvincias(); 
                 lblMensaje.Visible = false;
             }
+        }
+
+        private void cargarProvincias()
+        {
+            Sucursales sucursales = new Sucursales();
+            ddlProvincias.DataSource = sucursales.obtenerProvincias();
+            ddlProvincias.DataTextField = "DescripcionProvincia";
+            ddlProvincias.DataValueField = "Id_Provincia";
+            ddlProvincias.DataBind();
         }
         private void CargarSucursales()
         {
@@ -27,7 +37,6 @@ namespace TP5_Grupo7_PIII
 
 
         }
-
         protected void butMostrarT_Click(object sender, EventArgs e)
         {
                         tbIdSuc.Text = "";

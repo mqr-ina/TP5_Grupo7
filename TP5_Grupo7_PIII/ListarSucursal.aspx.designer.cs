@@ -87,6 +87,24 @@ namespace TP5_Grupo7_PIII
         protected global::System.Web.UI.WebControls.Button butMostrarT;
 
         /// <summary>
+        /// Control lblProvincia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblProvincia;
+
+        /// <summary>
+        /// Control ddlProvincias.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlProvincias;
+
+        /// <summary>
         /// Control vsErrores.
         /// </summary>
         /// <remarks>

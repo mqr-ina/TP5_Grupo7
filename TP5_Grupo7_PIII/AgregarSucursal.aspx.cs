@@ -50,7 +50,7 @@ namespace TP5_Grupo7_PIII
         private void mostrarMensaje(int filasAfectadas)
         {
             if (filasAfectadas == 1)
-                lblMensaje.Text = "Se agregó correctamente la sucursal";
+                lblMensaje.Text = "La sucursal se ha agregado con éxito";
             else
                 lblMensaje.Text = "No se pudo realizar la operación";
         }
