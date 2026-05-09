@@ -28,7 +28,7 @@
             width: 312px;
         }
         .auto-style13 {
-            width: 101px;
+            width: 145px;
         }
         .auto-style14 {
             height: 26px;
@@ -42,7 +42,7 @@
             height: 26px;
         }
         .auto-style17 {
-            width: 101px;
+            width: 145px;
             height: 26px;
         }
     </style>
@@ -52,12 +52,18 @@
         <div>
             <table class="auto-style1">
                 <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style12">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style15">
+                        <asp:HyperLink ID="hlAgregarSucursal" runat="server" NavigateUrl="~/AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
+                    </td>
+                    <td class="auto-style16">
+                        <asp:HyperLink ID="hlListadoSucursales" runat="server" NavigateUrl="~/ListarSucursal.aspx">Listado de sucursales</asp:HyperLink>
+                    </td>
+                    <td class="auto-style17">
+                        <asp:HyperLink ID="hlEliminarSucursal" runat="server" NavigateUrl="~/EliminarSucursal.aspx">Eliminar sucursal</asp:HyperLink>
+                    </td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style14"></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
@@ -95,7 +101,7 @@
                         <asp:Button ID="butEliminar" runat="server" Text="Eliminar" ValidationGroup="VEliminar" OnClick="butEliminar_Click" />
                     </td>
                     <td>
-                        <asp:RegularExpressionValidator ID="revNumeros" runat="server" ControlToValidate="tbEliminarId" ErrorMessage="La ID no puede contener letras ni espacios" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="VEliminar"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="revNumeros" runat="server" ControlToValidate="tbEliminarSucursal" ErrorMessage="La ID no puede contener letras ni espacios" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="VEliminar"></asp:RegularExpressionValidator>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
