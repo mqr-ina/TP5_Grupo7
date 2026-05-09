@@ -30,11 +30,11 @@ namespace TP5_Grupo7_PIII
 
             SqlCommand sqlcommand = new SqlCommand(consultaSql, conexion);
 
-            int filasAfectadas = (int)sqlcommand.ExecuteNonQuery();
+            int filasAfectadas = sqlcommand.ExecuteNonQuery();
             conexion.Close();
             return filasAfectadas;
         }
-        
+
     }
 
 }
