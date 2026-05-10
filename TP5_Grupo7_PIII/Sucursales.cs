@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,7 @@ namespace TP5_Grupo7_PIII
     public class Sucursales
     {
         AccederDatos acceso = new AccederDatos();
-
+        
         public DataTable obtenerProvincias()
         {
             string consultaSQL = "SELECT * FROM Provincia";
@@ -42,14 +43,16 @@ namespace TP5_Grupo7_PIII
         }
 
         public int obtenerIdProvincia(string item)
-        {
-            int idProvincia = 0;
+        {          
+            int idProvincia;
             string consultaSQL = "SELECT Id_Provincia FROM Provincia WHERE DescripcionProvincia = '" + item + "'";
-            DataTable tabla = acceso.obtenerTablas(consultaSQL, "Provincia");
-            if (tabla.Rows.Count > 0)
-                idProvincia = Convert.ToInt32(tabla.Rows[0]["Id_Provincia"]);
-            return idProvincia;
+            idProvincia = acceso.obtenerIdProvincia(consultaSQL);
+            return idProvincia;                       
         }
+
+        //DataTable tabla = acceso.obtenerTablas(consultaSQL, "Provincia");
+        //if (tabla.Rows.Count > 0)
+        //    idProvincia = Convert.ToInt32(tabla.Rows[0]["Id_Provincia"]);
 
         public int eliminarSucursal(string idSucursal)
         {

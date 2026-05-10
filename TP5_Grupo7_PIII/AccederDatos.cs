@@ -23,6 +23,25 @@ namespace TP5_Grupo7_PIII
             return ds.Tables[nombretabla]; // devolvemos la tabla del dataset que contiene los datos obtenidos de la consulta SQL
         }
 
+        public int obtenerIdProvincia(string consultaSQL)
+        {
+            int idProvincia = 0;
+
+            SqlConnection conex = new SqlConnection(rutaConexion);
+            conex.Open();
+
+            SqlCommand comando = new SqlCommand(consultaSQL, conex);      
+            
+            SqlDataReader lector = comando.ExecuteReader();
+            if(lector.Read())
+            {
+                idProvincia = Convert.ToInt32(lector[0]);
+            }
+            lector.Close();
+            conex.Close();
+            return idProvincia;
+        }
+
         public int ejecutarConsulta(string consultaSql)
         {
             SqlConnection conexion = new SqlConnection(rutaConexion);
