@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -28,24 +29,29 @@ namespace TP5_Grupo7_PIII
         }
         private int obtenerIdProvincia(string item)
         {
-            int idProvincia = 0;
+            int provincia_id = 0;
+            Sucursales sucursales = new Sucursales();
+            provincia_id=sucursales.obtenerIdProvincia(item);
+            return provincia_id;
 
-            if (item == "Buenos Aires")
-                idProvincia = 1;
-            if (item == "Entre Rios")
-                idProvincia = 2;
-            if (item == "Santa Fe")
-                idProvincia = 3;
-            if (item == "La Pampa")
-                idProvincia = 4;
-            if (item == "Cordoba")
-                idProvincia = 5;
-            if (item == "Misiones")
-                idProvincia = 6;
-            if (item == "Chaco")
-                idProvincia = 7;
+            //int idProvincia = 0;
 
-                return idProvincia;
+            //if (item == "Buenos Aires")
+            //    idProvincia = 1;
+            //if (item == "Entre Rios")
+            //    idProvincia = 2;
+            //if (item == "Santa Fe")
+            //    idProvincia = 3;
+            //if (item == "La Pampa")
+            //    idProvincia = 4;
+            //if (item == "Cordoba")
+            //    idProvincia = 5;
+            //if (item == "Misiones")
+            //    idProvincia = 6;
+            //if (item == "Chaco")
+            //    idProvincia = 7;
+
+            //    return idProvincia;
         }
         private void mostrarMensaje(int filasAfectadas)
         {
@@ -53,6 +59,14 @@ namespace TP5_Grupo7_PIII
                 lblMensaje.Text = "La sucursal se ha agregado con éxito";
             else
                 lblMensaje.Text = "No se pudo realizar la operación";
+        }
+
+        private void limpiarCampos()
+        {
+            txtNombreSuc.Text = "";
+            txtDescripcion.Text = "";
+            txtDireccion.Text = "";
+            ddlProvincias.SelectedIndex = 0;
         }
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -63,6 +77,9 @@ namespace TP5_Grupo7_PIII
             int filasAfectadas = accesoDatos.ejecutarConsulta(cadenaSqlAgregar);
 
             mostrarMensaje(filasAfectadas);
+
+            //lIMPIAMOS CAMPOS//
+           limpiarCampos();
         }
     }
 }

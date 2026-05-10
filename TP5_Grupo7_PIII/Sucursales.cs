@@ -33,6 +33,16 @@ namespace TP5_Grupo7_PIII
             return acceso.obtenerTablas(consultaSQL, nombreTabla);
         } 
 
+        public int obtenerIdProvincia(string item)
+        {
+            int idProvincia = 0;
+            string consultaSQL = "SELECT Id_Provincia FROM Provincia WHERE DescripcionProvincia = '" + item + "'";
+            DataTable tabla = acceso.obtenerTablas(consultaSQL, "Provincia");
+            if (tabla.Rows.Count > 0)
+                idProvincia = Convert.ToInt32(tabla.Rows[0]["Id_Provincia"]);
+            return idProvincia;
+        }
+
         public int eliminarSucursal(string idSucursal)
         {
             string consultaSQL = "DELETE FROM Sucursal WHERE Id_Sucursal = " + idSucursal;
