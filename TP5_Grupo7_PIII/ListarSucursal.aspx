@@ -182,7 +182,8 @@
                     </td>
                     <td class="auto-style13">&nbsp;</td>
                     <td class="auto-style17">
-                        &nbsp;</td>
+                        <asp:Button ID="butFiltrarProv" runat="server" Text="Filtrar por provincia" Width="160px" OnClick="butFiltrarprov_Click" />
+                    </td>
                     <td class="auto-style19">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

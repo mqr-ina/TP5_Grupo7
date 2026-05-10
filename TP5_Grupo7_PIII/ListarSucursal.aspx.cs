@@ -17,7 +17,7 @@ namespace TP5_Grupo7_PIII
             if (!IsPostBack)
             {
                 CargarSucursales();
-                cargarProvincias(); 
+                cargarProvincias();
                 lblMensaje.Visible = false;
             }
         }
@@ -39,14 +39,16 @@ namespace TP5_Grupo7_PIII
         }
         protected void butMostrarT_Click(object sender, EventArgs e)
         {
-                        tbIdSuc.Text = "";
-                        CargarSucursales();
+            Limpiarcampos();
+            CargarSucursales();
+
         }
+
 
         protected void butFiltrar_Click(object sender, EventArgs e)
         {
             string idSucursal = tbIdSuc.Text;
-            if(tbIdSuc.Text.Trim() == "")
+            if (tbIdSuc.Text.Trim() == "")
             {
                 lblMensaje.Text = "Ingrese un ID de sucursal";
                 lblMensaje.Visible = true;
@@ -54,6 +56,22 @@ namespace TP5_Grupo7_PIII
             }
             gvListar.DataSource = sucursales.filtrarSucursal(idSucursal);
             gvListar.DataBind();
+            Limpiarcampos();
+
+        }
+
+        private void Limpiarcampos()
+        {
+            tbIdSuc.Text = "";
+        }
+
+        protected void butFiltrarprov_Click(object sender, EventArgs e)
+        {
+            string idProvincia = ddlProvincias.SelectedValue;
+            gvListar.DataSource = sucursales.filtrarSucursalProv(Convert.ToInt32(idProvincia));
+            gvListar.DataBind();
+            Limpiarcampos();
+
 
         }
     }

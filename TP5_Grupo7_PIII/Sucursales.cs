@@ -33,6 +33,14 @@ namespace TP5_Grupo7_PIII
             return acceso.obtenerTablas(consultaSQL, nombreTabla);
         } 
 
+        public DataTable filtrarSucursalProv(int idSucursalProv) {
+         
+            string consultaSQL = "SELECT Id_Sucursal AS ID, NombreSucursal AS NOMBRE, DescripcionSucursal AS DESCRIPCION, DescripcionProvincia AS PROVINCIA, DireccionSucursal AS DIRECCION FROM Sucursal INNER JOIN Provincia ON Id_Provincia = Id_ProvinciaSucursal WHERE Id_ProvinciaSucursal = " + idSucursalProv;
+            string nombreTabla = "Sucursal";
+            return acceso.obtenerTablas(consultaSQL, nombreTabla);
+
+        }
+
         public int obtenerIdProvincia(string item)
         {
             int idProvincia = 0;
