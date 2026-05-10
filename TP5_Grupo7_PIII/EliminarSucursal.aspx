@@ -107,7 +107,9 @@
                 </tr>
                 <tr>
                     <td class="auto-style14"></td>
-                    <td class="auto-style15"></td>
+                    <td class="auto-style15">
+                        <asp:Label ID="lblEliminado" runat="server"></asp:Label>
+                    </td>
                     <td class="auto-style16"></td>
                     <td class="auto-style17"></td>
                     <td class="auto-style14"></td>
@@ -146,12 +148,12 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style12">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style15"></td>
+                    <td class="auto-style16"></td>
+                    <td class="auto-style17"></td>
+                    <td class="auto-style14"></td>
+                    <td class="auto-style14"></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
