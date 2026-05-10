@@ -11,6 +11,7 @@ namespace TP5_Grupo7_PIII
 {
     public partial class AgregarSucursal : System.Web.UI.Page
     {
+        Sucursales sucursal = new Sucursales();
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
@@ -56,9 +57,15 @@ namespace TP5_Grupo7_PIII
         private void mostrarMensaje(int filasAfectadas)
         {
             if (filasAfectadas == 1)
+            {
                 lblMensaje.Text = "La sucursal se ha agregado con éxito";
+                lblMensaje.ForeColor = System.Drawing.Color.Green;
+            }
             else
+            {
                 lblMensaje.Text = "No se pudo realizar la operación";
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
+            }
         }
 
         private void limpiarCampos()
@@ -70,6 +77,7 @@ namespace TP5_Grupo7_PIII
         }
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
+            
             AccederDatos accesoDatos = new AccederDatos();
 
             string cadenaSqlAgregar = "INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) SELECT ' " + txtNombreSuc.Text + " ', ' " + txtDescripcion.Text + " ' , " + obtenerIdProvincia(ddlProvincias.SelectedItem.Text) + " , ' " + txtDireccion.Text + " '";
@@ -79,7 +87,7 @@ namespace TP5_Grupo7_PIII
             mostrarMensaje(filasAfectadas);
 
             //lIMPIAMOS CAMPOS//
-           limpiarCampos();
+            limpiarCampos();
         }
     }
 }

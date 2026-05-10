@@ -13,6 +13,7 @@
         .auto-style4 {
             width: 328px;
             font-size: x-large;
+            height: 56px;
         }
         .auto-style6 {
             width: 328px;
@@ -45,6 +46,17 @@
             width: 145px;
             height: 26px;
         }
+        .auto-style18 {
+            height: 56px;
+        }
+        .auto-style19 {
+            width: 312px;
+            height: 56px;
+        }
+        .auto-style20 {
+            width: 145px;
+            height: 56px;
+        }
     </style>
 </head>
 <body>
@@ -74,12 +86,12 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
+                    <td class="auto-style18"></td>
                     <td class="auto-style4"><strong>ELIMINAR SUCURSAL</strong></td>
-                    <td class="auto-style12">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style19"></td>
+                    <td class="auto-style20"></td>
+                    <td class="auto-style18"></td>
+                    <td class="auto-style18"></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
@@ -108,9 +120,10 @@
                 <tr>
                     <td class="auto-style14"></td>
                     <td class="auto-style15">
+                        &nbsp;</td>
+                    <td class="auto-style16">
                         <asp:Label ID="lblEliminado" runat="server"></asp:Label>
                     </td>
-                    <td class="auto-style16"></td>
                     <td class="auto-style17"></td>
                     <td class="auto-style14"></td>
                     <td class="auto-style14"></td>

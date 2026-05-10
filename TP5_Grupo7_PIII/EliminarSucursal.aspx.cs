@@ -21,7 +21,7 @@ namespace TP5_Grupo7_PIII
         {
           
             deleteSucursal(tbEliminarSucursal.Text);
-             
+            tbEliminarSucursal.Text = "";
 
         }
 
@@ -32,12 +32,15 @@ namespace TP5_Grupo7_PIII
             {
                 lblEliminado.Text = "La sucursal se ha eliminado con éxito";
                 lblEliminado.Visible = true;
+                lblEliminado.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
-                lblEliminado.Text = "No se ha podido eliminar la sucursal";
+                lblEliminado.Text = "No se encontró la sucursal o hubo un error";
                 lblEliminado.Visible = true;
+                lblEliminado.ForeColor = System.Drawing.Color.Red;
             }
         }
+
     }
 }

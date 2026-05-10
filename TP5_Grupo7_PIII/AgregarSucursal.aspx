@@ -27,6 +27,28 @@
             width: 186px;
             height: 48px;
         }
+        .auto-style9 {
+            height: 48px;
+            width: 194px;
+        }
+        .auto-style10 {
+            width: 194px;
+        }
+        .auto-style11 {
+            height: 23px;
+            width: 194px;
+        }
+        .auto-style12 {
+            height: 26px;
+        }
+        .auto-style13 {
+            width: 186px;
+            height: 26px;
+        }
+        .auto-style14 {
+            width: 194px;
+            height: 26px;
+        }
     </style>
 </head>
 <body>
@@ -41,7 +63,7 @@
                     <td class="auto-style8">
                         <asp:HyperLink ID="hlListadoS" runat="server" NavigateUrl="~/ListarSucursal.aspx">Listado Sucursales</asp:HyperLink>
                     </td>
-                    <td class="auto-style7">
+                    <td class="auto-style9">
                         <asp:HyperLink ID="hlEliminarS" runat="server" NavigateUrl="~/EliminarSucursal.aspx">Eliminar Sucursales</asp:HyperLink>
                     </td>
                     <td class="auto-style7"></td>
@@ -51,7 +73,7 @@
                     <td>&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style10">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -59,7 +81,7 @@
                     <td>&nbsp;</td>
                     <td class="auto-style3"><strong style="font-size: x-large">GRUPO N°7</strong></td>
                     <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style10">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -67,7 +89,7 @@
                     <td class="auto-style2"></td>
                     <td class="auto-style4"></td>
                     <td class="auto-style4"></td>
-                    <td class="auto-style2"></td>
+                    <td class="auto-style11"></td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2"></td>
                 </tr>
@@ -75,7 +97,7 @@
                     <td>&nbsp;</td>
                     <td class="auto-style3"><strong style="font-size: large">Agregar Sucursal</strong></td>
                     <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style10">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -85,8 +107,8 @@
                     <td class="auto-style3">
                         <asp:TextBox ID="txtNombreSuc" runat="server"></asp:TextBox>
                     </td>
-                    <td>
-                        <asp:RequiredFieldValidator ID="rfvNombreS" runat="server" ControlToValidate="txtNombreSuc" ErrorMessage="error" ValidationGroup="AgregarF">Ingrese Sucursal</asp:RequiredFieldValidator>
+                    <td class="auto-style10">
+                        <asp:RequiredFieldValidator ID="rfvNombreS" runat="server" ControlToValidate="txtNombreSuc" ErrorMessage="Ingrese Sucursal" ValidationGroup="AgregarF">*</asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -97,8 +119,8 @@
                     <td class="auto-style3">
                         <asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox>
                     </td>
-                    <td>
-                        <asp:RequiredFieldValidator ID="rfvDescS" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="error" ValidationGroup="AgregarF">Ingrese Descripcion</asp:RequiredFieldValidator>
+                    <td class="auto-style10">
+                        <asp:RequiredFieldValidator ID="rfvDescS" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Ingrese Descripcion" ValidationGroup="AgregarF">*</asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -110,27 +132,27 @@
                         <asp:DropDownList ID="ddlProvincias" runat="server" Width="131px">
                         </asp:DropDownList>
                     </td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style10">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
-                    <td class="auto-style3">Direccion:</td>
-                    <td class="auto-style3">
+                    <td class="auto-style12"></td>
+                    <td class="auto-style13">Direccion:</td>
+                    <td class="auto-style13">
                         <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
                     </td>
-                    <td>
-                        <asp:RequiredFieldValidator ID="rfvDireccionS" runat="server" ControlToValidate="txtDireccion" ErrorMessage="error" ValidationGroup="AgregarF">Ingrese Direccion</asp:RequiredFieldValidator>
+                    <td class="auto-style14">
+                        <asp:RequiredFieldValidator ID="rfvDireccionS" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese Direccion" ValidationGroup="AgregarF">*</asp:RequiredFieldValidator>
                     </td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style12"></td>
+                    <td class="auto-style12"></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style10">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -140,7 +162,9 @@
                     <td class="auto-style3">
                         <asp:Button ID="btnAceptar" runat="server" CssClass="auto-style7" Text="Aceptar" Width="111px" OnClick="btnAceptar_Click" ValidationGroup="AgregarF" />
                     </td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style10">
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="#FF3300" ValidationGroup="AgregarF" />
+                    </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -148,7 +172,7 @@
                     <td>&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style10">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
@@ -158,7 +182,7 @@
                     <td class="auto-style3">
                         <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style10">&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
