@@ -60,5 +60,11 @@ namespace TP5_Grupo7_PIII
             return acceso.ejecutarConsulta(consultaSQL);
         }
 
+        public bool existeSucursal(string nombre)
+        {
+            string consultaSQL = "SELECT * FROM Sucursal WHERE NombreSucursal = '" + nombre + "'";
+            DataTable tabla = acceso.obtenerTablas(consultaSQL, "Sucursal");
+            return tabla.Rows.Count > 0;
+        }
     }
 }

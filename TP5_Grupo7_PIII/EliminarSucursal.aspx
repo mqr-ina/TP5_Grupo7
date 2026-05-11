@@ -59,8 +59,9 @@
         }
     </style>
 </head>
-<body>
-    <form id="form1" runat="server">
+
+<body style="background-color: #6495ED ;">    <form id="form1" runat="server">
+
         <div>
             <table class="auto-style1">
                 <tr>

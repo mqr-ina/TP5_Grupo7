@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
@@ -68,6 +69,16 @@ namespace TP5_Grupo7_PIII
             }
         }
 
+
+        /*
+         private void mostrarMensaje(int filasAfectadas)
+        {
+           lblMensaje.Text = filasAfectadas == 1 ? "La sucursal se ha agregado con éxito" : "No se pudo realizar la operación";
+           lblMensaje.ForeColor = filasAfectadas == 1 ? System.Drawing.Color.Green : System.Drawing.Color.Red;
+         }
+        */
+
+
         private void limpiarCampos()
         {
             txtNombreSuc.Text = "";
@@ -77,6 +88,12 @@ namespace TP5_Grupo7_PIII
         }
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
+            if (sucursal.existeSucursal(txtNombreSuc.Text))
+            {
+                lblMensaje.Text = "La sucursal ya existe";
+                lblMensaje.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
             
             AccederDatos accesoDatos = new AccederDatos();
 

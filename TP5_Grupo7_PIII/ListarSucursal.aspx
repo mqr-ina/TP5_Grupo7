@@ -89,7 +89,9 @@
         }
     </style>
 </head>
-<body>
+
+<body style="background-color: #76B49D;">
+
     <form id="form1" runat="server">
         <div>
             <table class="auto-style1">

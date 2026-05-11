@@ -19,10 +19,15 @@ namespace TP5_Grupo7_PIII
 
         protected void butEliminar_Click(object sender, EventArgs e)
         {
-          
+            if (string.IsNullOrWhiteSpace(tbEliminarSucursal.Text))
+            {
+                lblEliminado.Text = "Ingrese un ID de sucursal";
+                lblEliminado.ForeColor = System.Drawing.Color.Red;
+                lblEliminado.Visible = true;
+                return;
+            }
             deleteSucursal(tbEliminarSucursal.Text);
             tbEliminarSucursal.Text = "";
-
         }
 
         private void deleteSucursal(string id)

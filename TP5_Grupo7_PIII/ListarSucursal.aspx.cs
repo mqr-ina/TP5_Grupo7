@@ -60,6 +60,21 @@ namespace TP5_Grupo7_PIII
 
         }
 
+        /*
+        protected void butFiltrar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tbIdSuc.Text))
+            {
+                lblMensaje.Text = "Ingrese un ID de sucursal";
+                lblMensaje.Visible = true;
+                return;
+            }
+            gvListar.DataSource = sucursales.filtrarSucursal(tbIdSuc.Text);
+            gvListar.DataBind();
+            Limpiarcampos();
+        }
+        */
+
         private void Limpiarcampos()
         {
             tbIdSuc.Text = "";
