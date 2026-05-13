@@ -68,8 +68,7 @@ namespace TP5_Grupo7_PIII
                 lblMensaje.ForeColor = System.Drawing.Color.Red;
             }
         }
-
-
+        
         /*
          private void mostrarMensaje(int filasAfectadas)
         {
@@ -77,8 +76,6 @@ namespace TP5_Grupo7_PIII
            lblMensaje.ForeColor = filasAfectadas == 1 ? System.Drawing.Color.Green : System.Drawing.Color.Red;
          }
         */
-
-
         private void limpiarCampos()
         {
             txtNombreSuc.Text = "";
@@ -95,11 +92,8 @@ namespace TP5_Grupo7_PIII
                 return;
             }
             
-            AccederDatos accesoDatos = new AccederDatos();
-
-            string cadenaSqlAgregar = "INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) SELECT ' " + txtNombreSuc.Text + " ', ' " + txtDescripcion.Text + " ' , " + obtenerIdProvincia(ddlProvincias.SelectedItem.Text) + " , ' " + txtDireccion.Text + " '";
-
-            int filasAfectadas = accesoDatos.ejecutarConsulta(cadenaSqlAgregar);
+            Sucursales sucursales = new Sucursales();
+            int filasAfectadas = sucursales.agregarSucursal(txtNombreSuc.Text, txtDescripcion.Text, obtenerIdProvincia(ddlProvincias.SelectedItem.Text), txtDireccion.Text);
 
             mostrarMensaje(filasAfectadas);
 

@@ -66,5 +66,12 @@ namespace TP5_Grupo7_PIII
             DataTable tabla = acceso.obtenerTablas(consultaSQL, "Sucursal");
             return tabla.Rows.Count > 0;
         }
+
+        public int agregarSucursal(string nombreSucursal, string descripcionSucursal, int IdProvinciaSucursal, string direccionSucursal)
+        {
+            string consultaSql = "INSERT INTO sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) SELECT" + "'" + nombreSucursal + "'" + " ," + "'" + descripcionSucursal + "'" + ","  + IdProvinciaSucursal + "," + "'" + direccionSucursal + "'";   
+            int filasAfectadas = acceso.ejecutarConsulta(consultaSql);
+            return filasAfectadas;
+        }
     }
 }
