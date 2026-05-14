@@ -179,7 +179,8 @@
                         <asp:Label ID="lblProvincia" runat="server" Text="Búsqueda seleccione una Provincia: "></asp:Label>
                     </td>
                     <td class="auto-style12">
-                        <asp:DropDownList ID="ddlProvincias" runat="server">
+                        <asp:DropDownList ID="ddlProvincias" runat="server" AppendDataBoundItems="true">
+                             <asp:ListItem Value="0">-- Seleccione una provincia --</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style13">&nbsp;</td>
