@@ -111,7 +111,7 @@
                         <asp:TextBox ID="tbEliminarSucursal" runat="server" Width="271px"></asp:TextBox>
                     </td>
                     <td class="auto-style13">
-                        <asp:Button ID="butEliminar" runat="server" Text="Eliminar" ValidationGroup="VEliminar" OnClick="butEliminar_Click" />
+                        <asp:Button ID="butEliminar" runat="server" Text="Eliminar" ValidationGroup="VEliminar" OnClientClick="return confirm('¿Confirma que desea eliminar esta sucursal?');" OnClick="butEliminar_Click" />
                     </td>
                     <td>
                         <asp:RegularExpressionValidator ID="revNumeros" runat="server" ControlToValidate="tbEliminarSucursal" ErrorMessage="La ID no puede contener letras ni espacios" ForeColor="Red" ValidationExpression="^\d+$" ValidationGroup="VEliminar"></asp:RegularExpressionValidator>
