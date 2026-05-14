@@ -10,6 +10,14 @@ namespace TP5_Grupo7_PIII
 {
     public class Sucursales
     {
+        private string consultaBaseSucursales = "SELECT Id_Sucursal AS ID, " +
+                                                "NombreSucursal AS NOMBRE, " +
+                                                "DescripcionSucursal AS DESCRIPCION, " +
+                                                "DescripcionProvincia AS PROVINCIA, " +
+                                                "DireccionSucursal AS DIRECCION " +
+                                                "FROM Sucursal " +
+                                                "INNER JOIN Provincia " +
+                                                "ON Id_Provincia = Id_ProvinciaSucursal";
         AccederDatos acceso = new AccederDatos();
         
         public DataTable obtenerProvincias()
@@ -21,22 +29,24 @@ namespace TP5_Grupo7_PIII
 
         public DataTable obtenerSucursales()
         {
-            string consultaSQL = "SELECT Id_Sucursal AS ID, NombreSucursal AS NOMBRE, DescripcionSucursal AS DESCRIPCION, DescripcionProvincia AS PROVINCIA, DireccionSucursal AS DIRECCION FROM Sucursal INNER JOIN Provincia ON Id_Provincia = Id_ProvinciaSucursal";
+           //string consultaSQL = "SELECT Id_Sucursal AS ID, NombreSucursal AS NOMBRE, DescripcionSucursal AS DESCRIPCION,
+           //DescripcionProvincia AS PROVINCIA, DireccionSucursal AS DIRECCION
+           //FROM Sucursal INNER JOIN Provincia ON Id_Provincia = Id_ProvinciaSucursal";
             string nombreTabla = "Sucursales";
-            return acceso.obtenerTablas(consultaSQL, nombreTabla);
+            return acceso.obtenerTablas(consultaBaseSucursales, nombreTabla);
         }
 
         public DataTable filtrarSucursal(string idSucursal)
         {
             //filtramos por idSucursal como se pide en el enunciado
-            string consultaSQL = "SELECT * FROM Sucursal WHERE Id_Sucursal = " + idSucursal;
+            string consultaSQL = consultaBaseSucursales + " WHERE Id_Sucursal = " + idSucursal;
             string nombreTabla = "Sucursal";
             return acceso.obtenerTablas(consultaSQL, nombreTabla);
         } 
 
         public DataTable filtrarSucursalProv(int idSucursalProv) {
          
-            string consultaSQL = "SELECT Id_Sucursal AS ID, NombreSucursal AS NOMBRE, DescripcionSucursal AS DESCRIPCION, DescripcionProvincia AS PROVINCIA, DireccionSucursal AS DIRECCION FROM Sucursal INNER JOIN Provincia ON Id_Provincia = Id_ProvinciaSucursal WHERE Id_ProvinciaSucursal = " + idSucursalProv;
+            string consultaSQL = consultaBaseSucursales + " WHERE Id_ProvinciaSucursal = " + idSucursalProv;
             string nombreTabla = "Sucursal";
             return acceso.obtenerTablas(consultaSQL, nombreTabla);
 
@@ -69,7 +79,7 @@ namespace TP5_Grupo7_PIII
 
         public int agregarSucursal(string nombreSucursal, string descripcionSucursal, int IdProvinciaSucursal, string direccionSucursal)
         {
-            string consultaSql = "INSERT INTO sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) SELECT" + "'" + nombreSucursal + "'" + " ," + "'" + descripcionSucursal + "'" + ","  + IdProvinciaSucursal + "," + "'" + direccionSucursal + "'";   
+            string consultaSql = "INSERT INTO sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) SELECT" + "' " + nombreSucursal + "'" + " ," + "'" + descripcionSucursal + "'" + ","  + IdProvinciaSucursal + "," + "'" + direccionSucursal + "'";   
             int filasAfectadas = acceso.ejecutarConsulta(consultaSql);
             return filasAfectadas;
         }

@@ -34,14 +34,11 @@ namespace TP5_Grupo7_PIII
         {
             gvListar.DataSource = sucursales.obtenerSucursales();
             gvListar.DataBind();
-
-
         }
         protected void butMostrarT_Click(object sender, EventArgs e)
         {
             Limpiarcampos();
             CargarSucursales();
-
         }
 
 
@@ -57,7 +54,6 @@ namespace TP5_Grupo7_PIII
             gvListar.DataSource = sucursales.filtrarSucursal(idSucursal);
             gvListar.DataBind();
             Limpiarcampos();
-
         }
 
         /*
