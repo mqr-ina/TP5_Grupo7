@@ -67,7 +67,13 @@ namespace TP5_Grupo7_PIII
                 return;
             }
 
-            int idSucursal = Convert.ToInt32(tbEliminarSucursal.Text);
+            //int idSucursal = Convert.ToInt32(tbEliminarSucursal.Text); ==> Con esto el código rompía 
+            int idSucursal;
+            if (!int.TryParse(tbEliminarSucursal.Text, out idSucursal))
+            {
+                lblSucursalAEliminar.Text = "Ingrese únicamente valores numéricos";
+                return;
+            }
             string nombre = sucursales.obtenerNombreSucursal(idSucursal);
 
             if (nombre != null)
