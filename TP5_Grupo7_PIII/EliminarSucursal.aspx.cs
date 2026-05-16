@@ -17,23 +17,23 @@ namespace TP5_Grupo7_PIII
 
         }
 
-        private bool sucursalChequeada // <<--- esto es nuevo.Para verificar si se presionó ese botón o no.
+        private bool sucursalChequeada // <- esto es una propiedad privada para verificar si se presionó ese botón.
         {
             get { return ViewState["sucursalChequeada"] != null && (bool)ViewState["sucursalChequeada"]; }
             set { ViewState["sucursalChequeada"] = value; }
         }
-        protected void butEliminar_Click(object sender, EventArgs e) 
+        protected void butEliminar_Click(object sender, EventArgs e)
         {
             
             if (sucursalChequeada) //si el botón de chequear sucursal se presionó...
             {
-                deleteSucursal(tbEliminarSucursal.Text); //no elimina la sucursal
+                deleteSucursal(tbEliminarSucursal.Text); // elimina la sucursal.
                 tbEliminarSucursal.Text = "";
                 sucursalChequeada = false;
             }
             else
             {
-                lblSucursalAEliminar.Text = "¡ATENCIÓN! : Primero debe chequear la sucursal.";        
+                lblSucursalAEliminar.Text = "¡ATENCIÓN! : Primero debe chequear la sucursal.";         
             }                     
         }
 
@@ -67,7 +67,6 @@ namespace TP5_Grupo7_PIII
                 return;
             }
 
-
             int idSucursal = Convert.ToInt32(tbEliminarSucursal.Text);
             string nombre = sucursales.obtenerNombreSucursal(idSucursal);
 
@@ -77,9 +76,7 @@ namespace TP5_Grupo7_PIII
                 sucursalChequeada = true;
             }
             else
-            {
-                lblSucursalAEliminar.Text = "No existe ese ID de sucursal";                
-            }
+               lblSucursalAEliminar.Text = "No existe ese ID de sucursal";                
         }
     }
 }
