@@ -17,17 +17,24 @@ namespace TP5_Grupo7_PIII
 
         }
 
-        protected void butEliminar_Click(object sender, EventArgs e)
+        private bool sucursalChequeada // <<--- esto es nuevo.Para verificar si se presionó ese botón o no.
         {
-            if (string.IsNullOrWhiteSpace(tbEliminarSucursal.Text))
+            get { return ViewState["sucursalChequeada"] != null && (bool)ViewState["sucursalChequeada"]; }
+            set { ViewState["sucursalChequeada"] = value; }
+        }
+        protected void butEliminar_Click(object sender, EventArgs e) 
+        {
+            
+            if (sucursalChequeada) //si el botón de chequear sucursal se presionó...
             {
-                lblEliminado.Text = "Ingrese un ID de sucursal";
-                lblEliminado.ForeColor = System.Drawing.Color.Red;
-                lblEliminado.Visible = true;
-                return;
+                deleteSucursal(tbEliminarSucursal.Text); //no elimina la sucursal
+                tbEliminarSucursal.Text = "";
+                sucursalChequeada = false;
             }
-            deleteSucursal(tbEliminarSucursal.Text);
-            tbEliminarSucursal.Text = "";
+            else
+            {
+                lblSucursalAEliminar.Text = "¡ATENCIÓN! : Primero debe chequear la sucursal.";        
+            }                     
         }
 
         private void deleteSucursal(string id)
@@ -47,5 +54,32 @@ namespace TP5_Grupo7_PIII
             }
         }
 
+        protected void btnChequearSucursal_Click(object sender, EventArgs e)
+        {
+           
+            sucursalChequeada = false;
+
+            if (string.IsNullOrWhiteSpace(tbEliminarSucursal.Text))
+            {
+                lblEliminado.Text = "Ingrese un ID de sucursal";
+                lblEliminado.ForeColor = System.Drawing.Color.Red;
+                lblEliminado.Visible = true;
+                return;
+            }
+
+
+            int idSucursal = Convert.ToInt32(tbEliminarSucursal.Text);
+            string nombre = sucursales.obtenerNombreSucursal(idSucursal);
+
+            if (nombre != null)
+            {
+                lblSucursalAEliminar.Text = "La sucursal a eliminar es: " + nombre;
+                sucursalChequeada = true;
+            }
+            else
+            {
+                lblSucursalAEliminar.Text = "No existe ese ID de sucursal";                
+            }
+        }
     }
 }

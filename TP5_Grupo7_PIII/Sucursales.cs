@@ -77,6 +77,20 @@ namespace TP5_Grupo7_PIII
             return tabla.Rows.Count > 0;
         }
 
+        public string obtenerNombreSucursal(int idSucursal) //Clase "Sucursales" (sería como un manager)
+        {
+            string consultaSQL = "SELECT NombreSucursal FROM Sucursal WHERE Id_Sucursal = " + idSucursal+ "";
+            DataTable tabla = acceso.obtenerTablas(consultaSQL, "Sucursal");
+            if(tabla.Rows.Count > 0) //si la tabla "trae" registros...
+            {
+                return tabla.Rows[0]["NombreSucursal"].ToString(); //Devuelve el nombre de la sucursal
+            }
+            else
+            {
+                return null; //Si no existe una sucursal con ese ID, no devuelve nada.
+            }
+        }
+
         public int agregarSucursal(string nombreSucursal, string descripcionSucursal, int IdProvinciaSucursal, string direccionSucursal)
         {
             string consultaSql = "INSERT INTO sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) SELECT" + "' " + nombreSucursal + "'" + " ," + "'" + descripcionSucursal + "'" + ","  + IdProvinciaSucursal + "," + "'" + direccionSucursal + "'";   

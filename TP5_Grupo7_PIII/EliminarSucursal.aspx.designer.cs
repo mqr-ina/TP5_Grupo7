@@ -69,6 +69,15 @@ namespace TP5_Grupo7_PIII
         protected global::System.Web.UI.WebControls.TextBox tbEliminarSucursal;
 
         /// <summary>
+        /// Control btnChequearSucursal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnChequearSucursal;
+
+        /// <summary>
         /// Control butEliminar.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace TP5_Grupo7_PIII
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button butEliminar;
+
+        /// <summary>
+        /// Control lblEliminado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEliminado;
 
         /// <summary>
         /// Control revNumeros.
@@ -87,12 +105,12 @@ namespace TP5_Grupo7_PIII
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revNumeros;
 
         /// <summary>
-        /// Control lblEliminado.
+        /// Control lblSucursalAEliminar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEliminado;
+        protected global::System.Web.UI.WebControls.Label lblSucursalAEliminar;
     }
 }

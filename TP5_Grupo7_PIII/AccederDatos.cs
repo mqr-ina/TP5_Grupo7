@@ -11,7 +11,7 @@ namespace TP5_Grupo7_PIII
     {
         private static string rutaConexion = @"Data Source=.\SQLEXPRESS;Initial Catalog = BDSucursales; Integrated Security = True; Encrypt=False;TrustServerCertificate=True";
         
-        public DataTable obtenerTablas(string consulaSQL, string nombretabla)
+        public DataTable obtenerTablas(string consulaSQL, string nombretabla) 
         {
             SqlConnection conex = new SqlConnection(rutaConexion);
             conex.Open();
