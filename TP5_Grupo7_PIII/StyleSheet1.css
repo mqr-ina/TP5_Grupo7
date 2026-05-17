@@ -1,0 +1,259 @@
+﻿/* Animacion compartida por todos los formularios */
+@keyframes move {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Agregar Sucursal */
+.body-agregar {
+    background: linear-gradient(270deg, #8B6914, #f0c040, #DAA520, #f0c040, #8B6914);
+    background-size: 400% 400%;
+    animation: move 5s linear infinite;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Listar Sucursales */
+.body-listar {
+    background: linear-gradient(270deg, #c4a882, #f5e6d0, #e8cfa8, #f5e6d0, #c4a882);
+    background-size: 400% 400%;
+    animation: move 5s linear infinite;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Eliminar Sucursal */
+.body-eliminar {
+    background: linear-gradient(270deg, #606060, #d4d4d4, #a0a0a0, #d4d4d4, #606060);
+    background-size: 400% 400%;
+    animation: move 5s linear infinite;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Navbar compartido */
+.nav-bar {
+    display: flex;
+    gap: 20px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+}
+
+.nav-link {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s;
+}
+
+    .nav-link:hover {
+        background-color: rgba(0, 0, 0, 0.45);
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+/* Contenedor compartido */
+.contenedor {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 14px;
+    padding: 30px 40px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+}
+
+/* Titulos compartidos */
+.titulo-grupo {
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.titulo-seccion {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+/* Campos compartidos */
+.campo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+    .campo label {
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 14px;
+        width: 160px;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+.campo-boton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Inputs compartidos */
+.input-campo {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 6px;
+    padding: 5px 10px;
+    color: #1a0050;
+    font-size: 13px;
+}
+
+    .input-campo:focus {
+        outline: none;
+        border-color: #ffffff;
+        box-shadow: 0 0 6px rgba(255,255,255,0.8);
+    }
+
+/* Botones compartidos */
+.btn-principal {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .btn-principal:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+        color: #ffffff;
+    }
+
+/* Eliminar Sucursal - boton eliminar */
+.btn-eliminar {
+    background-color: rgba(180, 0, 0, 0.5);
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .btn-eliminar:hover {
+        background-color: rgba(220, 0, 0, 0.7);
+    }
+
+/* Labels mensajes compartidos */
+.lbl-mensaje {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Listar Sucursales - label mensaje error */
+.body-listar .lbl-mensaje {
+    color: #ff4444;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    background-color: rgba(255,255,255,0.2);
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid #ff4444;
+}
+
+/* Eliminar Sucursal - label advertencia */
+.lbl-advertencia {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #ff4444;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    background-color: rgba(255,255,255,0.2);
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid #ff4444;
+}
+
+/* Validadores compartidos */
+.validador {
+    color: #ff4444;
+    font-weight: bold;
+}
+
+/* Listar Sucursales - GridView */
+.gridview-listar {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    .gridview-listar th {
+        background-color: #a0785a;
+        color: #ffffff;
+        padding: 8px;
+        text-align: left;
+        font-size: 13px;
+    }
+
+    .gridview-listar td {
+        padding: 6px 10px;
+        color: #3a2010;
+        border-bottom: 1px solid rgba(160, 120, 90, 0.3);
+        font-size: 13px;
+        background-color: rgba(255, 240, 220, 0.7);
+    }
+
+    .gridview-listar tr:nth-child(even) td {
+        background-color: rgba(240, 220, 190, 0.7);
+    }
+
+    .gridview-listar tr:hover td {
+        background-color: rgba(200, 170, 130, 0.5);
+    }

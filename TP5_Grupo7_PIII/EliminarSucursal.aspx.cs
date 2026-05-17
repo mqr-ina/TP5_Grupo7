@@ -79,7 +79,15 @@ namespace TP5_Grupo7_PIII
                 return;
             }
 
-            //Alternativa al TryParse usando foreach con char.IsDigit
+            // Validacion que el ID no supere los 10 digitos
+            if (tbEliminarSucursal.Text.Trim().Length > 10)
+            {
+                lblSucursalAEliminar.Text = "El ID no puede superar los 10 dígitos.";
+                lblSucursalAEliminar.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
+            // Alternativa al TryParse usando foreach con char.IsDigit
             //foreach (char c in tbEliminarSucursal.Text.Trim())
             //{
             //    if (!char.IsDigit(c))
