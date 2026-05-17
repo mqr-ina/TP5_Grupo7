@@ -102,7 +102,7 @@ namespace TP5_Grupo7_PIII
 
             if (nombre != null)
             {
-                // Se cambia el color a naranja para advertir antes de eliminar
+                // Se cambia el color a rojo para advertir antes de eliminar
                 lblSucursalAEliminar.Text = "La sucursal a eliminar es: " + nombre;
                 lblSucursalAEliminar.ForeColor = System.Drawing.Color.Red;
                 sucursalChequeada = true;
